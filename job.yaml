@@ -1,0 +1,27 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: transformation-service-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: transformation-service
+        image: transformation-service:latest
+        imagePullPolicy: IfNotPresent
+        volumeMounts:
+        - name: input-data
+          mountPath: /app/input_data.csv
+        - name: output-data
+          mountPath: /app/output_data.csv
+      volumes:
+      - name: input-data
+        hostPath:
+          path: /data/input_data.csv
+          type: File
+      - name: output-data
+        hostPath:
+          path: /data/output_data.csv
+          type: File
+      restartPolicy: Never
+  backoffLimit: 4

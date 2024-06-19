@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: transformation-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: transformation-service
+  template:
+    metadata:
+      labels:
+        app: transformation-service
+    spec:
+      containers:
+      - name: transformation-service
+        image: transformation-service:latest
+        imagePullPolicy: IfNotPresent
+        volumeMounts:
+        - name: input-data
+          mountPath: /app/input_data.csv
+        - name: output-data
+          mountPath: /app/output_data.csv
+      volumes:
+      - name: input-data
+        hostPath:
+          path: /data/input_data.csv
+          type: File
+      - name: output-data
+        hostPath:
+          path: /data/output_data.csv
+          type: File
