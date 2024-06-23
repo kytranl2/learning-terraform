@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: transformation-service
+  name: transformation
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: transformation-service
+      app: transformation
   template:
     metadata:
       labels:
-        app: transformation-service
+        app: transformation
     spec:
       containers:
-      - name: transformation-service
-        image: transformation-service:latest
+      - name: transformation
+        image: transformation:latest
         imagePullPolicy: IfNotPresent
         volumeMounts:
         - name: input-data

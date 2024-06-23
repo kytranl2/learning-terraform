@@ -1,13 +1,13 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: transformation-service-job
+  name: transformation-job
 spec:
   template:
     spec:
       containers:
-      - name: transformation-service
-        image: transformation-service:latest
+      - name: transformation
+        image: transformation:latest
         imagePullPolicy: IfNotPresent
         volumeMounts:
         - name: input-data
