@@ -3,6 +3,13 @@
 
 **minikube stop**
 
+**minikube mount /Users/ky/git/transformation_python/data:/data**
+
+**eval $(minikube docker-env)** - configure your shell to use the Docker daemon inside Minikube
+
+# Docker
+**docker build -t transformation:latest .**
+
 # Kubectl with namespace 
 **kubectl create namespace transformation**
 
@@ -28,6 +35,7 @@
 
 **kubectl delete deployment transformation**
 
+
 # Helpful Commands
 **kubectl config view --minify --output 'jsonpath={..namespace}'**
 
@@ -35,3 +43,5 @@
 The --output flag specifies the format of the output. In this case, it is using jsonpath to filter and extract specific information from the kubeconfig file.
 
 jsonpath={..namespace}: This is a JSONPath expression used to filter and extract the namespace value from the configuration. The .. operator recursively searches for the namespace field in the JSON structure.
+
+**kubectl rollout restart deployment transformation**

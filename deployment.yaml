@@ -18,12 +18,15 @@ spec:
         imagePullPolicy: IfNotPresent
         volumeMounts:
         - name: input-data
+        # This should match your image's directory
+        # If WORKDIR=/app then it should be `/app/input_data.csv`
           mountPath: /app/input_data.csv
         - name: output-data
           mountPath: /app/output_data.csv
       volumes:
       - name: input-data
         hostPath:
+        # If using Minikube, ensure to mount directory on your host machine to a directory in minikube vm
           path: /data/input_data.csv
           type: File
       - name: output-data
