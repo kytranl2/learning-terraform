@@ -45,3 +45,11 @@ The --output flag specifies the format of the output. In this case, it is using 
 jsonpath={..namespace}: This is a JSONPath expression used to filter and extract the namespace value from the configuration. The .. operator recursively searches for the namespace field in the JSON structure.
 
 **kubectl rollout restart deployment transformation**
+
+## Provisioning an Amazon EKS (Elastic Kubernetes Service) cluster with Terraform and deploying Jupyter Notebook 
+
+**terraform init**
+
+**terraform apply**
+
+**terraform destroy**
