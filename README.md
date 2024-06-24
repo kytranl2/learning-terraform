@@ -53,3 +53,8 @@ jsonpath={..namespace}: This is a JSONPath expression used to filter and extract
 **terraform apply**
 
 **terraform destroy**
+
+
+# AWS
+**aws eks --region us-west-2 update-kubeconfig --name my-cluster** - Configure kubectl to use the new EKS cluster.
+
