@@ -56,5 +56,6 @@ jsonpath={..namespace}: This is a JSONPath expression used to filter and extract
 
 
 # AWS
+**aws configure** - access key ID and secret access key 
 **aws eks --region us-west-2 update-kubeconfig --name my-cluster** - Configure kubectl to use the new EKS cluster.
 
